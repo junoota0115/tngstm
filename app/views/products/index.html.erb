@@ -1,6 +1,13 @@
-Product name
+<div class="mainpage">
+<div class="main-title">Product name</div>
 
-<div class="contents row">
+<div class="contents">
+<div class="main-btn">
+<div class="main-image1">
+<%#= link_to image_tag("midimg1.jpeg", class:"main-btn-img"), new_product_path %>
+</div>
+<%= link_to 'Record', new_product_path %>
+</div>
 
   <% @products.each do |product| %>
     <div class="content">
@@ -18,3 +25,4 @@ Product name
     </div>
 </div>
   <% end %>
+</div>
