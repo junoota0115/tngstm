@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
+
   def index 
     @products = Product.all
   end
@@ -32,5 +34,11 @@ class ProductsController < ApplicationController
   private
   def product_params
     params.require(:product).permit(:company_id,:product_name,:price,:stock,:comment,:img_path)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end
