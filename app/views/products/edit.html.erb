@@ -1,0 +1,12 @@
+<div class="contents row">
+  <div class="container">
+    <h3>投稿する</h3>
+    <%= form_with(model: @product, local: true) do |form| %>
+      <%= form.text_field :product_name, placeholder: "product_name" %>
+      <%= form.text_field :price, placeholder: "price" %>
+      <%= form.text_field :stock, placeholder: "stock" %>
+      <%= form.text_area :comment, placeholder: "comment" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+  </div>
+</div>

@@ -11,6 +11,19 @@ class ProductsController < ApplicationController
     Product.create(product_params)
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    product = Product.find(params[:id])
+    product.update(product_params)
+  end 
+
   def destroy
     @product = Product.find(params[:id])
     @product.destroy

@@ -6,8 +6,10 @@ Product name
   <% @products.each do |product| %>
     <div class="content">
     <%= link_to '削除', product_path(product.id),method: :delete %>
+          <%= link_to '詳細',product_path(product.id),method: :get %>
       <div class="product_name">薬品名:
       <%= product.product_name %></div>
+
       <div class="price">単価:
       <%= product.price %></div>
       <div class="stock">個数:
