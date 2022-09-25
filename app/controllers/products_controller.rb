@@ -11,6 +11,11 @@ class ProductsController < ApplicationController
     Product.create(product_params)
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+  end
+
   private
   def product_params
     params.require(:product).permit(:company_id,:product_name,:price,:stock,:comment,:img_path)

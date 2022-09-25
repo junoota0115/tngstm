@@ -1,10 +1,11 @@
 Product name
 
 <%= link_to 'Record', new_product_path %>
-
 <div class="contents row">
+
   <% @products.each do |product| %>
     <div class="content">
+    <%= link_to '削除', product_path(product.id),method: :delete %>
       <div class="product_name">薬品名:
       <%= product.product_name %></div>
       <div class="price">単価:
