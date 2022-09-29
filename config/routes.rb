@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'products#index'
-  resources :products
+  resources :products do
+  collection do
+    get 'search'
+  end
+  
+  end
 end

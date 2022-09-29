@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show,:search]
 
   def index 
     @products = Product.all
@@ -29,6 +29,10 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
+  end
+
+  def search
+    @products = Product.search(params[:keyword])
   end
 
   private

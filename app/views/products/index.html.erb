@@ -6,6 +6,10 @@
 <div class="main-image1">
 <%#= link_to image_tag("midimg1.jpeg", class:"main-btn-img"), new_product_path %>
 </div>
+<%= form_with(url: search_products_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "薬品を検索する", class: "search-input" %>
+  <%= form.submit "検索", class: "search-btn" %>
+<% end %>
 <%= link_to 'Record', new_product_path %>
 </div>
 
